@@ -1,0 +1,195 @@
+/* GENERAL */
+
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+li {
+  list-style: none;
+}
+
+section {
+  background-color: rgb(245, 245, 245);
+}
+
+.blue {
+  color: #0353A4;
+}
+
+hr {
+  border: 1px solid black;
+  margin: 8px 0;
+}
+
+.title{ 
+  font-size: 120px;
+  text-align: left;
+  line-height: 1;
+
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* 
+
+
+    LANDING PAGE 
+    
+      
+*/
+
+#landingpage{
+  min-height: 100vh;
+}
+
+.header{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 1000px;
+}
+
+.header__para{
+  font-size: 20px;
+  line-height: 2;
+  max-width: 600px;
+}
+
+.social__list{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  width: 80px;
+  max-width: 100px;
+}
+
+.social__link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0353A4;
+  border-radius: 50%;
+  color: white;
+  padding: 6px;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  margin-right: 12px;
+
+}
+
+
+
+
+
+
+
+/* 
+
+
+    NAV 
+    
+      
+*/
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  height: 100px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+
+#personal-logo{
+  width: 50px;
+  height: 50px;
+}
+
+.nav__link--list{
+  display: flex;
+  align-items: center;
+}
+
+.nav__link{
+  margin: 0 12px;
+}
+
+
+
+.nav__link--anchor{
+  font-size: 16px;
+  color: #0353A4;
+  font-weight: 700;
+}
+
+.fa-circle-half-stroke{
+  font-size: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* LINK HOVER EFFECT */
+.link__hover-effect {
+  position: relative;
+  display: inline-block;
+}
+
+.link__hover-effect:after {
+  cursor: pointer;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -4px;
+  right: 0;
+  transition: width 0.3s ease;
+}
+
+.link__hover-effect:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.link__hover-effect--black:after{
+  background-color: black;
+}
