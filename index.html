@@ -10,6 +10,7 @@
   <link rel="icon" href="assets/LogoBlack.png" type="image/png">
   <title>Austin Kerzman</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.lineicons.com/5.1/line/lineicons.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/4c2b00dcda.js" crossorigin="anonymous"></script>
   <script src="script.js" defer></script>
 </head>
@@ -46,13 +47,18 @@
         </li>
         <li class="
         nav__link
-        link__hover-effect
-        link__hover-effect--black">
+        click">
           <i class="fa-solid fa-circle-half-stroke"></i>
         </li>
         
       </ul>
     </nav>
+
+    <!-- 
+    
+    HEADER
+    
+    -->
 
     <header class="header">
       <div class="header__content">
@@ -66,26 +72,176 @@
           Here's a bit more <b class="blue">about me</b>. 
         </p>
         <div class="social__list">
-          <a href="#" target="_blank" class="social__link">
+          <a href="#" target="_blank" class="social__link click">
             <i class="fa-brands fa-linkedin"></i>
           </a>
-          <a href="" target="_blank" class="social__link">
+          <a href="https://github.com/Kerzmani" target="_blank" class="social__link click">
             <i class="fa-brands fa-github"></i>
           </a>
-          <a href="https://discord.com/users/181540650074767360" target="_blank" class="social__link">
+          <a href="https://discord.com/users/181540650074767360" target="_blank" class="social__link click">
             <i class="fa-brands fa-discord"></i>
           </a>
-          <a href="#" target="_blank" class="social__link">
+          <a href="#" target="_blank" class="social__link click">
             <i class="fa-solid fa-file"></i>
           </a>
         </div>
-        
       </div>
-  
     </header>
-
-
+     <button class="mail__btn click">
+      <i class="fa-solid fa-envelope"></i>
+    </button>
+    <a href="#projects" class="scroll">
+      <div class="scroll__icon click"></div>
+    </a>
   </section>
+
+<!-- 
+  
+PROJECTS
+
+  -->
+  <section id="projects">
+    <div class="container">
+      <div class="row">
+        <h1 class="section__title">
+          Here are some of my <span class="blue">projects.</span>
+        </h1>
+        <ul class="project__list">
+          <li class="project">
+            <div class="project__wrapper">
+              <img src="assets/E-Portolio.png" class="project__img" alt="E-Portfolio">
+              <div class="project__wrapper--bg"></div>
+              <div class="project__description">
+                <h3 class="project__description--title light-blue">
+                  Personal E-Portfolio 
+                </h3>
+                <h4 class="project__description--sub-title">
+                  HTML,CSS,JavaScript,
+                </h4>
+                <p class="project__description--para">
+                  A prototype build for my personal e-portolio website, built using HTML, CSS, and JavaScript. This project was built to practice responsive design and user-friendly UI, with a dash of Javascript for interactivity. The design is sleek, modern, and gives the users a seamless experience when browsing through my projects and information.
+                </p>
+                <div class="project__description--links">
+                  <a href=" https://kerzmani.github.io/E-Portfolio/"
+                  target = "_blank"
+                  class="project__description--link dark-blue click">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                  <a href="https://github.com/Kerzmani/E-Portfolio" 
+                  target = "_blank" 
+                  class="project__description--link light-blue click">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="project">
+            <div class="project__wrapper">
+              <img src="assets/E-Commerce Image.png" class="project__img" alt="Library E-Commerce Project">
+              <div class="project__wrapper--bg"></div>
+              <div class="project__description">
+                <h3 class="project__description--title light-blue">
+                  Library E-Commerce Website
+                </h3>
+                <h4 class="project__description--sub-title">
+                  HTML,CSS,JavaScript,
+                </h4>
+                <p class="project__description--para">
+                  A library e-commerce website built using HTML, CSS, and Javascript. This project was built to practice responsive design and user-friendly UI, with a dash of Javascript for interactivity. Library comes with a sleek, modern design and gives the users a seamless experience when browsing and purchasing books.
+                </p>
+                <div class="project__description--links">
+                  <a href="https://kerzmani.github.io/E-Commerce-Library-Project/" 
+                  target = "_blank"
+                  class="project__description--link light-blue click">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                  <a href="https://github.com/Kerzmani/E-Commerce-Library-Project" 
+                  target = "_blank" 
+                  class="project__description--link light-blue click">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="project">
+            <div class="project__wrapper">
+              <img src="assets/T-React Image.png" class="project__img" alt="T-React Website">
+              <div class="project__wrapper--bg"></div>
+              <div class="project__description">
+                <h3 class="project__description--title light-blue">
+                  T-React Website
+                </h3>
+                <h4 class="project__description--sub-title">
+                  HTML,CSS,JavaScript,
+                </h4>
+                <p class="project__description--para">
+                 T-React website built using HTML, CSS, and Javascript. This project shows developing skills in responsive design and interactivty for the user. It's design is sleek, modern, and seamless allowing users to easily navigate and interact with the website.
+                </p>
+                <div class="project__description--links">
+                  <a href=" https://kerzmani.github.io/T-React-Website/" 
+                  target = "_blank" 
+                  class="project__description--link light-blue click">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                  <a href="https://github.com/Kerzmani/T-React-Website" 
+                  target = "_blank" 
+                  class="project__description--link light-blue click">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="figure">
+        <img src="assets/LogoBlack.png" alt="Logo" class="footer__logo">
+        </div>
+        <div class="footer__social--list">
+          <a href="#" target="_blank" class="
+          footer__social--link 
+          link__hover-effect
+          link__hover-effect--black
+          click">
+           GitHub
+          </a>
+          <a href="#" target="_blank" class="
+          footer__social--link 
+          link__hover-effect
+          link__hover-effect--black
+          click">
+           Discord
+          </a>
+          <a href="#" target="_blank" class="
+          footer__social--link
+          link__hover-effect
+          link__hover-effect--black
+          click">
+           Email
+          </a>
+          <a href="#" target="_blank" class="
+          footer__social--link
+          link__hover-effect
+          link__hover-effect--black
+          click">
+           Resume
+          </a>
+          
+        </div>
+        <div class="footer__copyright">
+          <p>&copy; 2024 Austin Kerzman. All rights reserved.</p>
+      </div>
+    </div>
+    </div>
+  </footer>
 
  
 </body>
