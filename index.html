@@ -12,7 +12,17 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://cdn.lineicons.com/5.1/line/lineicons.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/4c2b00dcda.js" crossorigin="anonymous"></script>
-  <script src="script.js" defer></script>
+  <script src="index.js" defer></script>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+      (function(){
+          emailjs.init({
+            publicKey: "ylUlp9MOXU0lDJwC",
+          });
+      })();
+  </script>
 </head>
 <body>
   <section id="landingpage">
@@ -23,32 +33,36 @@
       <ul class="
       nav__link--list">
 
-        <li class="nav__link
-        link__hover-effect
-        link__hover-effect--black
-        ">
-          <a href="#contact" class="nav__link--anchor"
+        <li class="nav__link" onclick="toggleModal()">
+          <a href="#contact" 
+          class="
+          nav__link--anchor 
+          link__hover-effect
+          link__hover-effect--black"
           >About</a>
         </li>
 
         <li class="
-        nav__link 
-        link__hover-effect
-        link__hover-effect--black">
-          <a href="#projects" class="nav__link--anchor"
+        nav__link">
+          <a href="#projects" 
+          class="
+          nav__link--anchor 
+          link__hover-effect
+          link__hover-effect--black"
           >Projects</a>
       </li>
         <li class="
-        nav__link
-        link__hover-effect
-        link__hover-effect--black">
-          <a href="#contact" class="nav__link--anchor"
+          nav__link
+          link__hover-effect
+          link__hover-effect--black">
+          <a href="#contact" class="nav__link--anchor" onclick="toggleModal()"
           >Contact</a>
         </li>
         <li class="
         nav__link
-        click">
-          <i class="fa-solid fa-circle-half-stroke"></i>
+        click"
+        onclick="toggleContrast()">
+          <i class="fa-solid fa-circle-half-stroke fa-adjust"></i>
         </li>
         
       </ul>
@@ -69,7 +83,7 @@
         <p class="header__para">
           I'm a <b class="blue">Frontend Software Engineer</b> with a creative spark for desiging sleek and seamless websites and applications, with a focus on user experience and performance.
           <br>
-          Here's a bit more <b class="blue">about me</b>. 
+          Here's a bit more <b class="blue click" onclick="toggleModal()">about me</b>. 
         </p>
         <div class="social__list">
           <a href="#" target="_blank" class="social__link click">
@@ -87,12 +101,71 @@
         </div>
       </div>
     </header>
-     <button class="mail__btn click">
+     <button class="mail__btn click" onclick="toggleModal()">
       <i class="fa-solid fa-envelope"></i>
     </button>
     <a href="#projects" class="scroll">
       <div class="scroll__icon click"></div>
     </a>
+    <div class="modal">
+      <div class="modal__half modal__about">
+        <h3 class="modal__title modal__title--about">A bit more about myself.</h3>
+        <h4 class="modal__sub-title modal__sub-title--about light-blue"> Frontend Software Engineer</h4>
+        <p class="modal__para modal__para--about">
+          I'm a 26 year old <b class="light-blue">Frontend Software Engineer</b> with a creative spark for desiging sleek, seamless websites and applications that provide smooth <b class="light-blue">user experiences</b>.
+         <br>
+         <br>
+          I'm currently seekiing a full-time position as a <b class="light-blue">Frontend Software Engineer</b> where I can utlize my honed capablities in <b class="light-blue">HTML/CSS/JS</b> to contribute in creating <b class="light-blue">quality </b> and <b class="light-blue">innovative </b>websites and projects that set the industry standard for user experience and performance.
+        </p>
+        <div class="modal__languages">
+          <figure class="modal__language">
+            <img class="modal__language--img" src="assets/HTML5_Badge.svg.png" alt="HTML5" class="modal__language--icon">
+            <span class="language__name">HTML5</span>
+          </figure>
+          <figure class="modal__language">
+            <img class="modal__language--img" src="assets/css-131-722685.webp" alt="CSS" class="modal__language--icon">
+            <span class="language__name">CSS</span>
+          </figure>
+          <figure class="modal__language">
+            <img class="modal__language--img" src="assets/javascript-1-225993.webp" alt="JavaScript" class="modal__language--icon">
+            <span class="language__name">JavaScript</span>
+          </figure>
+          <figure class="modal__language">
+            <img class="modal__language--img" src="assets/react-3-1175109.webp" alt="React" class="modal__language--icon">
+            <span class="language__name">React</span>
+          </figure>
+        </div>
+      </div>
+      <div class="modal__half modal__contact">
+        <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+        <h3 class="modal__title modal__title--contact">
+          Let's get in touch!
+        </h3>
+        <h3 class="modal__sub-title modal__sub-title--contact">
+          I'm open to new opportunities and possibilities, so feel free to reach out!
+        </h3>
+        <form id="contant__form" onsubmit="contact(event)">
+          <div class="form__item">
+            <label class="form__item--label">Name</label>
+            <input class="input" name="user_name" type="text">
+          </div>
+          <div class="form__item">
+            <label class="form__item--label">Email</label>
+            <input class="input" name="user_email" type="email">
+          </div>
+          <div class="form__item">
+            <label class="form__item--label">Message</label>
+            <textarea class="input" name="message"></textarea>
+          </div>
+          <button id="contact__submit" class="form__submit">
+            Package and deliver!
+          </button>
+        </form>
+        <div class="modal__overlay modal__overlay--loading">
+          <i class="fas fa-spinner"></i>
+        </div>
+        <div class="modal__overlay modal__overlay--success">
+          Thank you for your interest!<br>Looking forward to touching base with you soon!
   </section>
 
 <!-- 
@@ -125,7 +198,8 @@ PROJECTS
                   <a href=" https://kerzmani.github.io/E-Portfolio/"
                   target = "_blank"
                   class="project__description--link dark-blue click">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <i 
+                    class="fa-solid fa-arrow-up-right-from-square"></i>
                   </a>
                   <a href="https://github.com/Kerzmani/E-Portfolio" 
                   target = "_blank" 
@@ -172,7 +246,10 @@ PROJECTS
               <img src="assets/T-React Image.png" class="project__img" alt="T-React Website">
               <div class="project__wrapper--bg"></div>
               <div class="project__description">
-                <h3 class="project__description--title light-blue">
+                <h3 class="
+                project__description--title 
+                light-blue"
+                >
                   T-React Website
                 </h3>
                 <h4 class="project__description--sub-title">
@@ -201,45 +278,52 @@ PROJECTS
     </div>
   </section>
   <footer>
+    <a href="#" class="scroll">
+      <div class="footer__scroll-icon click"></div>
+    </a>
     <div class="container">
-      <div class="figure">
-        <img src="assets/LogoBlack.png" alt="Logo" class="footer__logo">
+        <div class="row">
+          <div class="figure">
+            <img src="assets/LogoWhite.png" alt="Logo" class="footer__logo">
+            </div>
+              <div class="footer__social--list">
+                <a href="#" target="_blank" 
+                class="
+                footer__social--link 
+                link__hover-effect
+                link__hover-effect--white
+                click">
+                GitHub
+                </a>
+                <a href="#" target="_blank" 
+                class="
+                footer__social--link 
+                link__hover-effect
+                link__hover-effect--white
+                click">
+                Discord
+                </a>
+                <a href="#" target="_blank" 
+                class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                click">
+                Email
+                </a>
+                <a href="#" target="_blank" 
+                class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                click">
+                Resume
+                </a>
+              </div>
+            <div class="footer__copyright">
+              <p>&copy; 2026 Austin Kerzman. All rights reserved.</p>
+          </div>
         </div>
-        <div class="footer__social--list">
-          <a href="#" target="_blank" class="
-          footer__social--link 
-          link__hover-effect
-          link__hover-effect--black
-          click">
-           GitHub
-          </a>
-          <a href="#" target="_blank" class="
-          footer__social--link 
-          link__hover-effect
-          link__hover-effect--black
-          click">
-           Discord
-          </a>
-          <a href="#" target="_blank" class="
-          footer__social--link
-          link__hover-effect
-          link__hover-effect--black
-          click">
-           Email
-          </a>
-          <a href="#" target="_blank" class="
-          footer__social--link
-          link__hover-effect
-          link__hover-effect--black
-          click">
-           Resume
-          </a>
-          
-        </div>
-        <div class="footer__copyright">
-          <p>&copy; 2024 Austin Kerzman. All rights reserved.</p>
-      </div>
-    </div>
     </div>
   </footer>
 
