@@ -25,7 +25,7 @@
   </script>
 </head>
 <body>
-  <section id="landingpage">
+  <section id="landingpage" onmousemove="moveBackground(event)">
     <nav>
       <figure>
         <img src="assets/LogoBlack.png" id="personal-logo" alt="Logo">
@@ -38,7 +38,7 @@
           class="
           nav__link--anchor 
           link__hover-effect
-          link__hover-effect--black"
+          link__hover-effect--blue"
           >About</a>
         </li>
 
@@ -48,13 +48,13 @@
           class="
           nav__link--anchor 
           link__hover-effect
-          link__hover-effect--black"
+          link__hover-effect--blue"
           >Projects</a>
       </li>
         <li class="
           nav__link
           link__hover-effect
-          link__hover-effect--black">
+          link__hover-effect--blue">
           <a href="#contact" class="nav__link--anchor" onclick="toggleModal()"
           >Contact</a>
         </li>
@@ -110,12 +110,12 @@
     <div class="modal">
       <div class="modal__half modal__about">
         <h3 class="modal__title modal__title--about">A bit more about myself.</h3>
-        <h4 class="modal__sub-title modal__sub-title--about light-blue"> Frontend Software Engineer</h4>
+        <h4 class="modal__sub-title modal__sub-title--about blue"> Frontend Software Engineer</h4>
         <p class="modal__para modal__para--about">
-          I'm a 26 year old <b class="light-blue">Frontend Software Engineer</b> with a creative spark for desiging sleek, seamless websites and applications that provide smooth <b class="light-blue">user experiences</b>.
+          I'm a 26 year old <b class="blue">Frontend Software Engineer</b> with a creative spark for desiging sleek, seamless websites and applications that provide smooth <b class="blue">user experiences</b>.
          <br>
          <br>
-          I'm currently seekiing a full-time position as a <b class="light-blue">Frontend Software Engineer</b> where I can utlize my honed capablities in <b class="light-blue">HTML/CSS/JS</b> to contribute in creating <b class="light-blue">quality </b> and <b class="light-blue">innovative </b>websites and projects that set the industry standard for user experience and performance.
+          I'm currently seekiing a full-time position as a <b class="blue">Frontend Software Engineer</b> where I can utlize my honed capablities in <b class="blue">HTML/CSS/JS</b> to contribute in creating <b class="blue">quality </b> and <b class="blue">innovative </b>websites and projects that set the industry standard for user experience and performance.
         </p>
         <div class="modal__languages">
           <figure class="modal__language">
@@ -166,6 +166,22 @@
         </div>
         <div class="modal__overlay modal__overlay--success">
           Thank you for your interest!<br>Looking forward to touching base with you soon!
+        </div>
+      </div>
+    </div>
+
+    <!-- BACKGROUND SHAPES -->
+
+        <img src="assets/semi circle.svg" class="shape shape--0">
+        <img src="assets/circle.svg" class="shape shape--1">
+        <img src="assets/squiggly.svg" class="shape shape--2">
+        <img src="assets/circle.svg" class="shape shape--3">
+        <img src="assets/triangle.svg" class="shape shape--4">
+        <img src="assets/circle.svg" class="shape shape--5">
+        <img src="assets/squiggly.svg" class="shape shape--6">
+        <img src="assets/circle.svg" class="shape shape--7">
+        <img src="assets/semi circle.svg" class="shape shape--8">
+      
   </section>
 
 <!-- 
@@ -185,7 +201,7 @@ PROJECTS
               <img src="assets/E-Portolio.png" class="project__img" alt="E-Portfolio">
               <div class="project__wrapper--bg"></div>
               <div class="project__description">
-                <h3 class="project__description--title light-blue">
+                <h3 class="project__description--title blue">
                   Personal E-Portfolio 
                 </h3>
                 <h4 class="project__description--sub-title">
@@ -203,7 +219,7 @@ PROJECTS
                   </a>
                   <a href="https://github.com/Kerzmani/E-Portfolio" 
                   target = "_blank" 
-                  class="project__description--link light-blue click">
+                  class="project__description--link blue click">
                     <i class="fa-brands fa-github"></i>
                   </a>
                   
@@ -216,7 +232,7 @@ PROJECTS
               <img src="assets/E-Commerce Image.png" class="project__img" alt="Library E-Commerce Project">
               <div class="project__wrapper--bg"></div>
               <div class="project__description">
-                <h3 class="project__description--title light-blue">
+                <h3 class="project__description--title blue">
                   Library E-Commerce Website
                 </h3>
                 <h4 class="project__description--sub-title">
@@ -228,12 +244,12 @@ PROJECTS
                 <div class="project__description--links">
                   <a href="https://kerzmani.github.io/E-Commerce-Library-Project/" 
                   target = "_blank"
-                  class="project__description--link light-blue click">
+                  class="project__description--link blue click">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                   </a>
                   <a href="https://github.com/Kerzmani/E-Commerce-Library-Project" 
                   target = "_blank" 
-                  class="project__description--link light-blue click">
+                  class="project__description--link blue click">
                     <i class="fa-brands fa-github"></i>
                   </a>
                   
@@ -248,7 +264,7 @@ PROJECTS
               <div class="project__description">
                 <h3 class="
                 project__description--title 
-                light-blue"
+                blue"
                 >
                   T-React Website
                 </h3>
@@ -261,12 +277,12 @@ PROJECTS
                 <div class="project__description--links">
                   <a href=" https://kerzmani.github.io/T-React-Website/" 
                   target = "_blank" 
-                  class="project__description--link light-blue click">
+                  class="project__description--link blue click">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                   </a>
                   <a href="https://github.com/Kerzmani/T-React-Website" 
                   target = "_blank" 
-                  class="project__description--link light-blue click">
+                  class="project__description--link blue click">
                     <i class="fa-brands fa-github"></i>
                   </a>
                 </div>
@@ -278,20 +294,20 @@ PROJECTS
     </div>
   </section>
   <footer>
-    <a href="#" class="scroll">
-      <div class="footer__scroll-icon click"></div>
-    </a>
     <div class="container">
         <div class="row">
+          <a href="#landingpage" class="scroll">
+            <div class="footer__scroll-icon click"></div>
+          </a>
           <div class="figure">
-            <img src="assets/LogoWhite.png" alt="Logo" class="footer__logo">
+            <img src="assets/LogoBlue.png" alt="Logo" class="footer__logo">
             </div>
               <div class="footer__social--list">
                 <a href="#" target="_blank" 
                 class="
                 footer__social--link 
                 link__hover-effect
-                link__hover-effect--white
+                link__hover-effect--blue
                 click">
                 GitHub
                 </a>
@@ -299,7 +315,7 @@ PROJECTS
                 class="
                 footer__social--link 
                 link__hover-effect
-                link__hover-effect--white
+                link__hover-effect--blue
                 click">
                 Discord
                 </a>
@@ -307,7 +323,7 @@ PROJECTS
                 class="
                 footer__social--link
                 link__hover-effect
-                link__hover-effect--white
+                link__hover-effect--blue
                 click">
                 Email
                 </a>
@@ -315,7 +331,7 @@ PROJECTS
                 class="
                 footer__social--link
                 link__hover-effect
-                link__hover-effect--white
+                link__hover-effect--blue
                 click">
                 Resume
                 </a>

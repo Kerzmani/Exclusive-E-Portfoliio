@@ -2,14 +2,15 @@
 
 let isModalOpen = false;
 let contrastToggle = false;
-const headerTitleSecondary = document.querySelector(".blue");
+const shapes = document.querySelectorAll(".shape");
+const headerTitleSecondary = document.querySelector(".title-secondary .blue");
 const hr = document.querySelector("hr");
+
 
 
 // HR ELEMENT WIDTH DYNAMICALLY SET TO MATCH THE SECONDARY HEADER TITLE
 
 hr.style.width = headerTitleSecondary.getBoundingClientRect().width + "px";
-
 console.log(headerTitleSecondary.getBoundingClientRect().width);
 
 
@@ -22,6 +23,10 @@ console.log(headerTitleSecondary.getBoundingClientRect().width);
 
 
 // FUNCTIONS 
+
+
+// CONTACT FORM FUNCTION
+
 
 function contact(event) {
   event.preventDefault();
@@ -46,15 +51,23 @@ function contact(event) {
       );
     });
 }
+
+// MODAL TOGGLE FUNCTION
+
+
 function toggleModal() {
   if (isModalOpen) {
     isModalOpen = false;
+    document.body.style.overflow = 'auto';
     return document.body.classList.remove("modal--open");
   }
   isModalOpen = true;
+  document.body.style.overflow = 'hidden';
   document.body.classList.add("modal--open");
 }
 
+
+// CONTRAST TOGGLE FUNCTION
 
 function toggleContrast() {
   contrastToggle = !contrastToggle;
@@ -65,4 +78,19 @@ function toggleContrast() {
     document.body.classList.remove("dark-theme");
   }
 
+}
+
+
+
+// BACKGROUND MOVEMENT FUNCTION
+
+function moveBackground(event) {
+  const mousePositionX = event.clientX * 0.05;
+  const mousePositionY = event.clientY * 0.05;
+
+  for (let i = 0; i < shapes.length; ++i) {
+    const isOdd = i % 2 !== 0;
+    const boolInt = isOdd ? -1 : 1;
+    shapes[i].style.transform = `translate(${mousePositionX * boolInt}px, ${mousePositionY * boolInt}px)`;
+  }
 }
