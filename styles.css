@@ -167,6 +167,11 @@ textarea {
   background-color: #242424;
 }
 
+.dark-theme .modal__about {
+  background-color: #242424;
+  color: white;
+}
+
 .dark-theme hr{
   border-color: white;
 }
@@ -174,7 +179,6 @@ textarea {
 .dark-theme #personal-logo {
   filter: invert(100%);
 }
-
 
 
 
@@ -285,16 +289,11 @@ MODAL
 }
 
 .modal__about{
-  background-color: lightgray;
+  background-color: inherit;
   display: flex;
   flex-direction: column;
   justify-content: center;
   transform: translateX(-110%);
-}
-
-.dark-theme .modal__about {
-  background-color: #242424;
-  color: white;
 }
 
 .modal__languages{
