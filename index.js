@@ -63,7 +63,7 @@ function toggleModal() {
   }
   isModalOpen = true;
   document.body.style.overflow = 'hidden';
-  document.body.classList.add("modal--open");
+  document.body.classList.add("modal--open")
 }
 
 
@@ -94,3 +94,5 @@ function moveBackground(event) {
     shapes[i].style.transform = `translate(${mousePositionX * boolInt}px, ${mousePositionY * boolInt}px)`;
   }
 }
+
+document.addEventListener('mousemove', moveBackground);
