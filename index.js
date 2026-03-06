@@ -60,6 +60,7 @@ function toggleModal() {
     isModalOpen = false;
     document.body.style.overflow = 'auto';
     return document.body.classList.remove("modal--open");
+
   }
   isModalOpen = true;
   document.body.style.overflow = 'hidden';
