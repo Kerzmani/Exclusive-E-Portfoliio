@@ -1074,8 +1074,8 @@ SHAPES
 @media (max-width: 390px) {
 
   .modal {
-    max-height: calc(100vh - 120px);
-    
+    max-height: calc(100vh - 50px);
+
   }
 
   #personal-logo {
