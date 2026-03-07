@@ -1073,6 +1073,10 @@ SHAPES
 
 @media (max-width: 390px) {
 
+  .modal {
+    margin-top: 50px;
+  }
+
   #personal-logo {
     width: 35px;
     height: 35px;
