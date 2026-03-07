@@ -1074,7 +1074,7 @@ SHAPES
 @media (max-width: 390px) {
 
   .modal {
-    max-height: calc(100vh - 50px);
+    max-height: calc(100vh - 10px);
 
   }
 
