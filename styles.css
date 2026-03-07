@@ -269,10 +269,9 @@ MODAL
 .modal{
   display: flex;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 90%;
   max-width: 1100px;
   height: auto;
@@ -1074,8 +1073,8 @@ SHAPES
 @media (max-width: 390px) {
 
   .modal {
-    max-height: calc(100vh - 10px);
-
+    height: calc(100vh - 300px);
+    max-height: none;
   }
 
   #personal-logo {
