@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Austin Kerzman — Frontend Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-950: #052e16;
+    --green-900: #14532d;
+    --green-800: #166534;
+    --green-700: #15803d;
+    --green-600: #16a34a;
+    --green-400: #4ade80;
+    --green-300: #86efac;
+    --green-200: #bbf7d0;
+    --green-100: #dcfce7;
+    --green-50:  #f0fdf4;
+    --white: #ffffff;
+    --gray-800: #1f2937;
+    --gray-600: #4b5563;
+    --gray-400: #9ca3af;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e8f5e9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 32px 16px;
+  }
+
+  .page {
+    width: 860px;
+    min-height: 1110px;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(5,46,22,0.18);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--green-900);
+    padding: 36px 40px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+  }
+  .header-left h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.5px;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .header-left .title {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--green-400);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+  }
+  .contact-item {
+    font-size: 12.5px;
+    color: var(--green-200);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'DM Mono', monospace;
+  }
+  .contact-item a { color: var(--green-300); text-decoration: none; }
+  .contact-item a:hover { color: var(--green-400); }
+  .dot {
+    width: 3px; height: 3px;
+    background: var(--green-600);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* ── BODY ── */
+  .body {
+    display: flex;
+    flex: 1;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    width: 240px;
+    min-width: 240px;
+    background: var(--green-800);
+    padding: 28px 22px 40px;
+  }
+
+  .sidebar-section { margin-bottom: 6px; }
+
+  .sidebar-heading {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--green-400);
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--green-600);
+    margin-bottom: 12px;
+    margin-top: 22px;
+  }
+  .sidebar-section:first-child .sidebar-heading { margin-top: 0; }
+
+  .sidebar p, .sidebar a {
+    font-size: 12.5px;
+    color: var(--green-100);
+    line-height: 1.6;
+    display: block;
+    text-decoration: none;
+  }
+  .sidebar a { color: var(--green-300); }
+  .sidebar a:hover { color: var(--green-400); text-decoration: underline; }
+
+  .skill-group { margin-bottom: 10px; }
+  .skill-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--green-400);
+    margin-bottom: 2px;
+  }
+  .skill-items {
+    font-size: 12px;
+    color: var(--green-200);
+    line-height: 1.5;
+  }
+
+  .edu-degree {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+  .edu-school {
+    font-size: 12px;
+    color: var(--green-200);
+    line-height: 1.5;
+  }
+  .edu-detail {
+    font-size: 11.5px;
+    color: var(--green-300);
+    margin-top: 2px;
+  }
+
+  /* ── MAIN ── */
+  .main {
+    flex: 1;
+    padding: 28px 32px 40px;
+  }
+
+  .section { margin-bottom: 4px; }
+
+  .section-heading {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--green-700);
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--green-200);
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+  .section:first-child .section-heading { margin-top: 0; }
+
+  .summary-text {
+    font-size: 13px;
+    color: var(--gray-800);
+    line-height: 1.7;
+  }
+
+  /* Experience */
+  .job { margin-bottom: 14px; }
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+  .job-title { font-size: 14px; font-weight: 700; color: var(--green-900); }
+  .job-date  { font-size: 12px; color: var(--gray-600); font-family: 'DM Mono', monospace; }
+  .job-company { font-size: 12.5px; color: var(--green-700); font-weight: 600; margin-bottom: 6px; }
+
+  ul.bullets { list-style: none; padding: 0; }
+  ul.bullets li {
+    font-size: 12.5px;
+    color: var(--gray-800);
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 4px;
+    line-height: 1.55;
+  }
+  ul.bullets li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--green-500, #22c55e);
+    font-size: 10px;
+    top: 2px;
+  }
+
+  /* Projects */
+  .project { margin-bottom: 13px; }
+  .project-header {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 3px;
+  }
+  .project-name { font-size: 13.5px; font-weight: 700; color: var(--green-900); }
+  .project-tech { font-size: 11.5px; color: var(--gray-600); font-style: italic; }
+  .project-desc { font-size: 12.5px; color: var(--gray-800); line-height: 1.55; margin-bottom: 4px; }
+  .project-links { font-size: 11.5px; display: flex; gap: 16px; flex-wrap: wrap; }
+  .project-links span { color: var(--gray-400); font-weight: 600; margin-right: 2px; }
+  .project-links a { color: var(--green-700); text-decoration: none; font-family: 'DM Mono', monospace; }
+  .project-links a:hover { text-decoration: underline; color: var(--green-600); }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: none; padding: 0; }
+    .page { box-shadow: none; width: 100%; min-height: auto; }
+    a { color: inherit !important; }
+  }
+
+  @page { size: letter; margin: 0; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <h1>Austin Kerzman</h1>
+      <div class="title">Frontend Developer</div>
+    </div>
+    <div class="header-right">
+      <div class="contact-item">KerzmanDeveloping@email.com</div>
+      <div class="contact-item">(402) 630-3013 <span class="dot"></span> Omaha, NE</div>
+      <div class="contact-item"><a href="https://github.com/Kerzmani">github.com/Kerzmani</a></div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Skills</div>
+        <div class="skill-group">
+          <div class="skill-label">Languages</div>
+          <div class="skill-items">JavaScript (ES2023+), TypeScript, HTML5, CSS3</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Frameworks</div>
+          <div class="skill-items">React, Next.js</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Styling</div>
+          <div class="skill-items">Tailwind CSS, CSS Modules, Styled Components</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Testing</div>
+          <div class="skill-items">React Testing Library</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Tooling</div>
+          <div class="skill-items">Vite, Webpack, ESLint, Prettier, CoPilot</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Other</div>
+          <div class="skill-items">Git, REST APIs</div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Education</div>
+        <div class="edu-degree">B.A. Sociology</div>
+        <div class="edu-school">University of Nebraska Omaha</div>
+        <div class="edu-detail">Graduated 2024 · Honors</div>
+        <div class="edu-detail">GPA 3.7</div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Training</div>
+        <div class="edu-degree">Frontend Simplified</div>
+        <div class="edu-school">Bootcamp · Remote</div>
+        <div class="edu-detail">Dec 2025 – Present</div>
+      </div>
+
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <div class="section">
+        <div class="section-heading">Summary</div>
+        <p class="summary-text">Frontend developer student attending the Frontend Simplified (FES) bootcamp with hands-on experience building responsive, accessible web applications. Proficient in React, TypeScript, and modern CSS. Passionate about clean code, design systems, and delivering polished user experiences. Comfortable collaborating with design colleagues in developing and producing products.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-heading">Experience</div>
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Frontend Development Student</span>
+            <span class="job-date">Dec 2025 – Present</span>
+          </div>
+          <div class="job-company">Frontend Simplified Bootcamp · Remote</div>
+          <ul class="bullets">
+            <li>Developed projects using HTML, CSS, React, and Node.js; worked with REST APIs and their data usage.</li>
+            <li>Leveraged AI tools (CoPilot & Claude Code) to improve development workflows and increase productivity.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-heading">Projects</div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Exclusive E-Portfolio</span>
+            <span class="project-tech">HTML · Tailwind · TypeScript/JS</span>
+          </div>
+          <p class="project-desc">Interactive browser-based E-Portfolio visually presenting completed and in-progress projects, contact information, and personal background.</p>
+          <div class="project-links">
+            <div><span>GitHub</span><a href="https://github.com/Kerzmani/Exclusive-E-Portfoliio">github.com/Kerzmani/Exclusive-E-Portfoliio</a></div>
+            <div><span>Live</span><a href="https://kerzmani.github.io/Exclusive-E-Portfoliio/">kerzmani.github.io/Exclusive-E-Portfoliio</a></div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Library React App</span>
+            <span class="project-tech">HTML · Tailwind · TypeScript/JS · React</span>
+          </div>
+          <p class="project-desc">Interactive browser-based bookstore showcasing React component proficiency. Full cart functionality with item selection and price calculation.</p>
+          <div class="project-links">
+            <div><span>GitHub</span><a href="https://github.com/Kerzmani/Library-React">github.com/Kerzmani/Library-React</a></div>
+            <div><span>Live</span><a href="https://libraryproject1app-react-4b9afa3527d5.herokuapp.com/">libraryproject1app-react-4b9afa3527d5.herokuapp.com</a></div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">CSGO Skin API</span>
+            <span class="project-tech">HTML · Tailwind · JS</span>
+          </div>
+          <p class="project-desc">Browser-based tool for finding CS:GO skins by name, weapon category, and rarity. Demonstrates API integration and dynamic UI rendering with JavaScript.</p>
+          <div class="project-links">
+            <div><span>GitHub</span><a href="https://github.com/Kerzmani/CSGO-Skin-API-Project">github.com/Kerzmani/CSGO-Skin-API-Project</a></div>
+            <div><span>Live</span><a href="https://kerzmani.github.io/CSGO-Skin-API-Project/">kerzmani.github.io/CSGO-Skin-API-Project</a></div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Personal E-Portfolio Prototype</span>
+            <span class="project-tech">HTML · TypeScript/JS · Tailwind</span>
+          </div>
+          <p class="project-desc">Open-source E-Portfolio prototype built with HTML, Tailwind, and JavaScript.</p>
+          <div class="project-links">
+            <div><span>GitHub</span><a href="https://github.com/Kerzmani/E-Portfolio">github.com/Kerzmani/E-Portfolio</a></div>
+            <div><span>Live</span><a href="https://kerzmani.github.io/E-Portfolio/">kerzmani.github.io/E-Portfolio</a></div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">T-React Website</span>
+            <span class="project-tech">HTML · Tailwind · TypeScript/JS</span>
+          </div>
+          <p class="project-desc">Website project demonstrating solid understanding of React component architecture and Tailwind CSS utility-first styling.</p>
+          <div class="project-links">
+            <div><span>GitHub</span><a href="https://github.com/Kerzmani/T-React-Website">github.com/Kerzmani/T-React-Website</a></div>
+            <div><span>Live</span><a href="https://kerzmani.github.io/T-React-Website/">kerzmani.github.io/T-React-Website</a></div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /main -->
+  </div><!-- /body -->
+</div><!-- /page -->
+</body>
+</html>
